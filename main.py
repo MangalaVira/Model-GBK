@@ -12,11 +12,9 @@ CORS(app)  # Aktifkan CORS
 
 # Load model
 try:
-    model = load_model(
-        "model_guntingbatukertas.keras",
-        custom_objects={"Concatenate": Concatenate}
-    )
+    model = load_model("model_guntingbatukertas.keras")  # Memuat model .keras
 except Exception as e:
+    # Jika terjadi kesalahan saat memuat model, berikan error
     raise ValueError(f"Error loading model: {str(e)}")
 
 LABELS = ['paper', 'rock', 'scissors']
